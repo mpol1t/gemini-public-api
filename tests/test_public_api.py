@@ -1,16 +1,15 @@
-from gemini_public_api.exceptions import RateLimit, ServerError, MarketError, ResourceMoved
 from hypothesis import given, settings
 from hypothesis.strategies import from_type, sampled_from, dictionaries
+from mock import patch, MagicMock
+from pytest import raises
+from requests import Response
+
 from gemini_public_api.api import GeminiPublicAPI
+from gemini_public_api.exceptions import RateLimit, ServerError, MarketError, ResourceMoved
 from gemini_public_api.public_endpoints import (
     SYMBOLS, SYMBOL_DETAILS, PUBLIC_TICKER, PUBLIC_TICKER_V2, CANDLES, CURRENT_ORDER_BOOK,
     TRADE_HISTORY, PRICE_FEED, NETWORK, FREE_PROMOS
 )
-from requests import Response
-
-
-from mock import patch, MagicMock
-from pytest import raises
 
 MAX_EXAMPLES: int = 100
 
@@ -41,7 +40,7 @@ def test_get_network(token):
         mock.assert_called_once_with(endpoint=NETWORK.format(token=token))
 
     run_test()
-    
+
 
 @settings(max_examples=MAX_EXAMPLES)
 @given(symbol=from_type(str))
@@ -356,9 +355,9 @@ def test__get(json):
         response: Response = MagicMock()
         response.status_code = 200
         response.json.return_value = json
-    
+
         mock.return_value = response
-        
+
         assert GeminiPublicAPI._get(endpoint='') == json
 
     run_test()
