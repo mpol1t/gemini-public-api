@@ -59,7 +59,7 @@ print(symbols)
 
 ## Authors
 
-* **Michal Polit**
+* **mpol1t**
 
 ## License
 
