@@ -1,6 +1,7 @@
 [![codecov](https://codecov.io/gh/mpol1t/gemini-public-api/branch/main/graph/badge.svg?token=LV1BARCUF9)](https://codecov.io/gh/mpol1t/gemini-public-api)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gemini-public-api)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mpol1t/gemini-public-api/python-app.yml)
+![GitHub](https://img.shields.io/github/license/mpol1t/gemini-public-api)
 
 # Gemini Public API 
 
