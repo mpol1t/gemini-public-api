@@ -1,0 +1,4 @@
+[run]
+omit = tests/*
+cov = ./
+cov-report = xml
