@@ -55,17 +55,6 @@ def test_get_ticker(symbol):
 
 @settings(max_examples=MAX_EXAMPLES)
 @given(symbol=from_type(str))
-def test_get_ticker(symbol):
-    @patch('gemini_public_api.api.GeminiPublicAPI._get')
-    def run_test(mock):
-        GeminiPublicAPI.get_ticker(symbol=symbol)
-        mock.assert_called_once_with(endpoint=PUBLIC_TICKER.format(symbol=symbol))
-
-    run_test()
-
-
-@settings(max_examples=MAX_EXAMPLES)
-@given(symbol=from_type(str))
 def test_get_ticker_v2(symbol):
     @patch('gemini_public_api.api.GeminiPublicAPI._get')
     def run_test(mock):
