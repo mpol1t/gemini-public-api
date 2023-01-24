@@ -1,4 +1,5 @@
 [![codecov](https://codecov.io/gh/mpol1t/gemini-public-api/branch/main/graph/badge.svg?token=LV1BARCUF9)](https://codecov.io/gh/mpol1t/gemini-public-api)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gemini-public-api)
 
 # Gemini Public API 
 
