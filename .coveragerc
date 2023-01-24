@@ -1,4 +1,4 @@
 [run]
 omit = tests/*
-cov = ./
+cov = gemini_public_api/
 cov-report = xml
