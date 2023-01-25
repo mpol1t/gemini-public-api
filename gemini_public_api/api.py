@@ -32,8 +32,8 @@ class GeminiPublicAPI:
         :raises:    Timeout
         :raises:    Exception
         """
-        return cls._get(endpoint=public_endpoints.SYMBOLS) if sandbox else cls._get(
-            endpoint=public_sandbox_endpoints.SYMBOLS
+        return cls._get(endpoint=public_sandbox_endpoints.SYMBOLS) if sandbox else cls._get(
+            endpoint=public_endpoints.SYMBOLS
         )
 
     @classmethod
@@ -55,8 +55,8 @@ class GeminiPublicAPI:
         :raises:    Timeout
         :raises:    Exception
         """
-        return cls._get(endpoint=public_endpoints.SYMBOL_DETAILS.format(symbol=symbol)) if sandbox else cls._get(
-            endpoint=public_sandbox_endpoints.SYMBOL_DETAILS.format(symbol=symbol)
+        return cls._get(endpoint=public_sandbox_endpoints.SYMBOL_DETAILS.format(symbol=symbol)) if sandbox else cls._get(
+            endpoint=public_endpoints.SYMBOL_DETAILS.format(symbol=symbol)
         )
 
     @classmethod
@@ -78,8 +78,8 @@ class GeminiPublicAPI:
         :raises:    Timeout
         :raises:    Exception
         """
-        return cls._get(endpoint=public_endpoints.NETWORK.format(token=token)) if sandbox else cls._get(
-            endpoint=public_sandbox_endpoints.NETWORK.format(token=token)
+        return cls._get(endpoint=public_sandbox_endpoints.NETWORK.format(token=token)) if sandbox else cls._get(
+            endpoint=public_endpoints.NETWORK.format(token=token)
         )
 
     @classmethod
@@ -101,8 +101,8 @@ class GeminiPublicAPI:
         :raises:    Timeout
         :raises:    Exception
         """
-        return cls._get(endpoint=public_endpoints.PUBLIC_TICKER.format(symbol=symbol)) if sandbox else cls._get(
-            endpoint=public_sandbox_endpoints.PUBLIC_TICKER.format(symbol=symbol)
+        return cls._get(endpoint=public_sandbox_endpoints.PUBLIC_TICKER.format(symbol=symbol)) if sandbox else cls._get(
+            endpoint=public_endpoints.PUBLIC_TICKER.format(symbol=symbol)
         )
 
     @classmethod
@@ -124,8 +124,8 @@ class GeminiPublicAPI:
         :raises:    Timeout
         :raises:    Exception
         """
-        return cls._get(endpoint=public_endpoints.PUBLIC_TICKER_V2.format(symbol=symbol)) if sandbox else cls._get(
-            endpoint=public_sandbox_endpoints.PUBLIC_TICKER_V2.format(symbol=symbol)
+        return cls._get(endpoint=public_sandbox_endpoints.PUBLIC_TICKER_V2.format(symbol=symbol)) if sandbox else cls._get(
+            endpoint=public_endpoints.PUBLIC_TICKER_V2.format(symbol=symbol)
         )
 
     @classmethod
@@ -149,8 +149,8 @@ class GeminiPublicAPI:
         :raises:    Exception
         """
         return cls._get(
-            endpoint=public_endpoints.CANDLES.format(symbol=symbol, time_frame=time_frame)) if sandbox else cls._get(
-            endpoint=public_sandbox_endpoints.CANDLES.format(symbol=symbol, time_frame=time_frame))
+            endpoint=public_sandbox_endpoints.CANDLES.format(symbol=symbol, time_frame=time_frame)) if sandbox else cls._get(
+            endpoint=public_endpoints.CANDLES.format(symbol=symbol, time_frame=time_frame))
 
     @classmethod
     def get_free_promos(cls, sandbox: bool = False) -> Dict[Text, Any]:
@@ -170,8 +170,8 @@ class GeminiPublicAPI:
         :raises:    Timeout
         :raises:    Exception
         """
-        return cls._get(endpoint=public_endpoints.FREE_PROMOS) if sandbox else cls._get(
-            endpoint=public_sandbox_endpoints.FREE_PROMOS)
+        return cls._get(endpoint=public_sandbox_endpoints.FREE_PROMOS) if sandbox else cls._get(
+            endpoint=public_endpoints.FREE_PROMOS)
 
     @classmethod
     def get_current_order_book(
@@ -201,13 +201,13 @@ class GeminiPublicAPI:
         :raises:    Exception
         """
         return cls._get(
-            endpoint=public_endpoints.CURRENT_ORDER_BOOK.format(
+            endpoint=public_sandbox_endpoints.CURRENT_ORDER_BOOK.format(
                 symbol=symbol,
                 bid_limit=bid_limit,
                 ask_limit=ask_limit
             )
         ) if sandbox else cls._get(
-            endpoint=public_sandbox_endpoints.CURRENT_ORDER_BOOK.format(
+            endpoint=public_endpoints.CURRENT_ORDER_BOOK.format(
                 symbol=symbol,
                 bid_limit=bid_limit,
                 ask_limit=ask_limit
@@ -244,14 +244,14 @@ class GeminiPublicAPI:
         :raises:    Exception
         """
         return cls._get(
-            endpoint=public_endpoints.TRADE_HISTORY.format(
+            endpoint=public_sandbox_endpoints.TRADE_HISTORY.format(
                 symbol=symbol,
                 timestamp=timestamp,
                 limit_trades=limit_trades,
                 include_breaks=str(include_breaks).lower()
             )
         ) if sandbox else cls._get(
-            endpoint=public_sandbox_endpoints.TRADE_HISTORY.format(
+            endpoint=public_endpoints.TRADE_HISTORY.format(
                 symbol=symbol,
                 timestamp=timestamp,
                 limit_trades=limit_trades,
@@ -277,8 +277,8 @@ class GeminiPublicAPI:
         :raises:    Timeout
         :raises:    Exception
         """
-        return cls._get(endpoint=public_endpoints.PRICE_FEED) if sandbox else cls._get(
-            endpoint=public_sandbox_endpoints.PRICE_FEED)
+        return cls._get(endpoint=public_sandbox_endpoints.PRICE_FEED) if sandbox else cls._get(
+            endpoint=public_endpoints.PRICE_FEED)
 
     @classmethod
     def _get(cls, endpoint: str, timeout: int = 5) -> Union[Dict, List]:
