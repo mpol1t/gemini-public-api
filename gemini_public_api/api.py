@@ -1,4 +1,4 @@
-from typing import Dict, List, Union, Any, Text
+from typing import Dict, List, Union, Any, Text, Optional
 
 import requests
 
@@ -218,7 +218,7 @@ class GeminiPublicAPI:
     def get_trade_history(
             cls,
             symbol: str,
-            timestamp: int,
+            timestamp: Optional[int] = None,
             limit_trades: int = 500,
             include_breaks: bool = False,
             sandbox: bool = False
@@ -243,17 +243,12 @@ class GeminiPublicAPI:
         :raises:    Timeout
         :raises:    Exception
         """
+        endpoint: str = public_sandbox_endpoints.TRADE_HISTORY if sandbox else public_endpoints.TRADE_HISTORY
+        endpoint += f'&timestamp={timestamp}' if timestamp is not None else ''
+
         return cls._get(
-            endpoint=public_sandbox_endpoints.TRADE_HISTORY.format(
+            endpoint=endpoint.format(
                 symbol=symbol,
-                timestamp=timestamp,
-                limit_trades=limit_trades,
-                include_breaks=str(include_breaks).lower()
-            )
-        ) if sandbox else cls._get(
-            endpoint=public_endpoints.TRADE_HISTORY.format(
-                symbol=symbol,
-                timestamp=timestamp,
                 limit_trades=limit_trades,
                 include_breaks=str(include_breaks).lower()
             )
