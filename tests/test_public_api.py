@@ -239,7 +239,7 @@ def test_get_trade_history(symbol, timestamp, limit_trades, include_breaks):
                 timestamp=timestamp,
                 limit_trades=limit_trades,
                 include_breaks=str(include_breaks).lower()
-            )
+            ) + f'&timestamp={timestamp}'
         )
 
     run_test()
@@ -268,7 +268,7 @@ def test_get_trade_history_sandbox(symbol, timestamp, limit_trades, include_brea
                 timestamp=timestamp,
                 limit_trades=limit_trades,
                 include_breaks=str(include_breaks).lower()
-            )
+            ) + f'&timestamp={timestamp}'
         )
 
     run_test()
