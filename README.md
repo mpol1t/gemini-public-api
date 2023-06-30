@@ -3,64 +3,70 @@
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mpol1t/gemini-public-api/python-app.yml)
 ![GitHub](https://img.shields.io/github/license/mpol1t/gemini-public-api)
 
+<p align="center">
+  <img src="https://docs.gemini.com/images/gemini_api_dark_bg-ead2d197.svg" width="500" />
+</p>
+
+
 # Gemini Public API 
 
-A Python wrapper for the public Gemini API.
+The gemini-public-api is an unofficial Python implementation of the public Gemini REST API. It provides a simple interface for interacting with the Gemini cryptocurrency exchange, supporting both synchronous and asynchronous communication.
 
-## Getting Started
+## Table of Contents
 
-These instructions will get you a copy of the project up and running on your local machine.
+1. [Installation](#installation)
+2. [Usage](#usage)
+    - [Synchronous Usage](#synchronous-usage)
+    - [Asynchronous Usage](#asynchronous-usage)
+3. [Dependencies](#dependencies)
+4. [Contributors](#contributors)
+5. [License](#license)
 
-### Installing
-Install package through pip
+## Installation
+
+To get the Gemini Public API Python client running on your local machine, use pip:
+
 ```
 pip3 install gemini-public-api
 ```
 
-Alternatively, clone the repo
-
-```
-git clone https://github.com/michalpolit/gemini-public-api.git
-```
-
-and install dependencies
-
-```
-poetry install
-```
-
-
-## Running the tests
-In order to run tests, dependencies must be installed using
-```
-poetry install --with test
-```
-
-To run the tests
-
-```
-coverage run -m pytest
-```
-
-To show test coverage
-
-```
-coverage report -m
-```
+Please make sure that you have Python 3.6 or newer, as this library requires it.
 
 ## Usage
 
-```python
-from gemini_public_api.api import GeminiPublicAPI
+### Synchronous Usage
 
-symbols = GeminiPublicAPI.get_symbols()
-print(symbols)
+```python
+from gemini_public_api import api
+
+symbols = api.get_symbols()
+print(symbols.json())
 ```
 
-## Built With
+### Asynchronous Usage
 
-* [Poetry](https://python-poetry.org/docs/) - Packaging and dependency management
-* [Hypothesis](https://hypothesis.readthedocs.io/en/latest/) - Property-based testing
+The library relies on the aiohttp package for truly asynchronous execution. The ClientSession context manager is used for making async requests. Here's how to fetch the available symbols asynchronously:
+
+```python
+from gemini_public_api.aiohttp import api
+from gemini_public_api.aiohttp.session_context_manager import SessionContextManager
+
+async with SessionContextManager() as session:
+    response = await api.get_symbols(session)
+    
+    async with response as resp:
+        data = await resp.json()
+        print(data)
+```
+
+## Dependencies
+
+`gemini-public-api` is built with:
+
+* [poetry](https://python-poetry.org/docs/) -  A tool for dependency management and packaging in Python.
+* [hypothesis](https://hypothesis.readthedocs.io/en/latest/) - A powerful, flexible, and easy-to-use library for property-based testing.
+* [requests]() - The definitive library for making HTTP requests in Python.
+* [aiohttp]() - An asynchronous HTTP client/server framework for asyncio and Python.
 
 ## Authors
 
