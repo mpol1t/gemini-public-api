@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gemini-public-api"
-version = "0.9.0"
+version = "0.10.0"
 description = ""
 authors = ["Michal Polit <mpolit@protonmail.com>"]
 readme = "README.md"
