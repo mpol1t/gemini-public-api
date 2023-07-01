@@ -12,15 +12,6 @@
 
 The gemini-public-api is an unofficial Python implementation of the public Gemini REST API. It provides a simple interface for interacting with the Gemini cryptocurrency exchange, supporting both synchronous and asynchronous communication.
 
-## Table of Contents
-
-1. [Installation](#installation)
-2. [Usage](#usage)
-    - [Synchronous Usage](#synchronous-usage)
-    - [Asynchronous Usage](#asynchronous-usage)
-3. [Dependencies](#dependencies)
-4. [Contributors](#contributors)
-5. [License](#license)
 
 ## Installation
 
@@ -45,7 +36,7 @@ print(symbols.json())
 
 ### Asynchronous Usage
 
-The library relies on the aiohttp package for truly asynchronous execution. The ClientSession context manager is used for making async requests. Here's how to fetch the available symbols asynchronously:
+The library relies on the `aiohttp` package for truly asynchronous execution. The `SessionContextManager` context manager is used for making async requests. Here's how to fetch the available symbols asynchronously:
 
 ```python
 from gemini_public_api.aiohttp import api
@@ -59,14 +50,32 @@ async with SessionContextManager() as session:
         print(data)
 ```
 
+Alternatively, without the context manager:
+
+```python
+import aiohttp
+
+from gemini_public_api.aiohttp import api
+
+session = aiohttp.ClientSession()
+
+response = await api.get_symbols(session)
+ 
+async with response as resp:
+   data = await resp.json()
+   print(data)
+
+await session.close()
+```
+
 ## Dependencies
 
 `gemini-public-api` is built with:
 
 * [poetry](https://python-poetry.org/docs/) -  A tool for dependency management and packaging in Python.
 * [hypothesis](https://hypothesis.readthedocs.io/en/latest/) - A powerful, flexible, and easy-to-use library for property-based testing.
-* [requests]() - The definitive library for making HTTP requests in Python.
-* [aiohttp]() - An asynchronous HTTP client/server framework for asyncio and Python.
+* [requests](https://docs.python-requests.org/en/latest/) - The definitive library for making HTTP requests in Python.
+* [aiohttp](https://docs.aiohttp.org/en/stable/) - An asynchronous HTTP client/server framework for asyncio and Python.
 
 ## Authors
 
