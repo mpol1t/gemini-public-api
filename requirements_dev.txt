@@ -1,5 +1,5 @@
 coverage==7.5.3
-hypothesis==6.102.6
+hypothesis==6.103.0
 mock==5.1.0
 pytest==8.2.1
 pytest-asyncio==0.23.7
