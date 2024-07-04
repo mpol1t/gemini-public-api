@@ -10,7 +10,7 @@ packages = [{include = "gemini_public_api"}]
 python = "^3.9"
 requests = "^2.31.0"
 aiohttp = "^3.9.3"
-certifi = "2024.6.2"
+certifi = "2024.7.4"
 charset-normalizer = "3.3.2"
 idna = "3.7" # Added
 urllib3 = "2.2.2"
