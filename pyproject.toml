@@ -17,7 +17,7 @@ urllib3 = "2.2.2"
 
 [tool.poetry.group.test.dependencies]
 pytest = ">=8.1.1,<9.0.0"
-pytest-asyncio = ">=0.23.6,<0.24"
+pytest-asyncio = ">=0.23.6,<0.25"
 coverage = "^7.4.4"
 mock = ">=5.1.0,<6.0.0"
 hypothesis = "^6.99.13"
