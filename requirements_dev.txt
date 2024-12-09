@@ -1,4 +1,4 @@
-coverage==7.6.8
+coverage==7.6.9
 hypothesis==6.122.1
 mock==5.1.0
 pytest==8.3.4
