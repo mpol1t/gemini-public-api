@@ -1,4 +1,4 @@
-hypothesis==6.135.9
+hypothesis==6.135.11
 coverage==7.9.0
 mock==5.2.0
 pytest==8.4.0
