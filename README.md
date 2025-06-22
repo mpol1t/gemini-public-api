@@ -3,10 +3,11 @@
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mpol1t/gemini-public-api/python-app.yml)
 ![GitHub](https://img.shields.io/github/license/mpol1t/gemini-public-api)
 
+<!--
 <p align="center">
   <img src="https://docs.gemini.com/images/gemini_api_dark_bg-ead2d197.svg" width="500" />
 </p>
-
+-->
 
 # Gemini Public API 
 
