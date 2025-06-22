@@ -3,11 +3,11 @@
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mpol1t/gemini-public-api/python-app.yml)
 ![GitHub](https://img.shields.io/github/license/mpol1t/gemini-public-api)
 
-<!--
-<p align="center">
-  <img src="https://docs.gemini.com/images/gemini_api_dark_bg-ead2d197.svg" width="500" />
-</p>
--->
+⚠️ **This project is archived and no longer maintained.** ⚠️
+
+This repository and the associated PyPI package (`gemini-public-api`) are no longer supported. No future updates will be released.
+
+Feel free to fork or take over maintenance if needed.
 
 # Gemini Public API 
 
