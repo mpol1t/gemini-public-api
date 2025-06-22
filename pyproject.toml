@@ -5,6 +5,12 @@ description = "⚠️ This package is no longer maintained. No future updates wi
 authors = ["Michal Polit <mpolit@protonmail.com>"]
 readme = "README.md"
 packages = [{include = "gemini_public_api"}]
+classifiers = [
+    "Development Status :: 7 - Inactive",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
