@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "gemini-public-api"
-version = "0.11.2"
-description = ""
+version = "0.11.3"
+description = "⚠️ This package is no longer maintained. No future updates will be released."
 authors = ["Michal Polit <mpolit@protonmail.com>"]
 readme = "README.md"
 packages = [{include = "gemini_public_api"}]
